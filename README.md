@@ -13,15 +13,38 @@ A simple and customizable WhatsApp button module for Magento 2 that allows custo
 
 ## Installation
 
-1. Copy the module files to your Magento 2 installation
-2. Enable the module:
+### Option 1: Composer Installation (Recommended)
+
+1. Install the module via Composer:
+   ```bash
+   composer require zefbrito/magento2-whatsapp
+   ```
+
+2. Enable the module and run setup:
    ```bash
    php bin/magento module:enable Zefbrito_Whatsapp
    php bin/magento setup:upgrade
    php bin/magento setup:di:compile
    php bin/magento setup:static-content:deploy
    ```
+
 3. Clear cache:
+   ```bash
+   php bin/magento cache:flush
+   ```
+
+### Option 2: Manual Installation
+
+1. Download and extract the module files
+2. Copy the module files to `app/code/Zefbrito/Whatsapp/` in your Magento 2 installation
+3. Enable the module:
+   ```bash
+   php bin/magento module:enable Zefbrito_Whatsapp
+   php bin/magento setup:upgrade
+   php bin/magento setup:di:compile
+   php bin/magento setup:static-content:deploy
+   ```
+4. Clear cache:
    ```bash
    php bin/magento cache:flush
    ```
