@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <whatsapp>
+            <general>
+                <enabled>0</enabled>
+                <phone_number></phone_number>
+                <message>Hello! I'm interested in your products.</message>
+                <position>bottom-right</position>
+            </general>
+            <appearance>
+                <button_text>Chat with us</button_text>
+                <button_color>#25D366</button_color>
+            </appearance>
+        </whatsapp>
+    </default>
+</config>

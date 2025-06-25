@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="zefbrito" translate="label" sortOrder="200">
+            <label>Zefbrito Extensions</label>
+        </tab>
+        <section id="whatsapp" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>WhatsApp Chat</label>
+            <tab>zefbrito</tab>
+            <resource>Zefbrito_Whatsapp::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable WhatsApp Chat</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable WhatsApp chat widget</comment>
+                </field>
+                <field id="phone_number" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>WhatsApp Phone Number</label>
+                    <comment>Enter WhatsApp phone number with country code (e.g., 5511999999999)</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="message" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Message</label>
+                    <comment>Default message that will be sent when chat is initiated</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="position" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget Position</label>
+                    <source_model>Zefbrito\Whatsapp\Model\Config\Source\Position</source_model>
+                    <comment>Choose where to display the WhatsApp chat widget</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="appearance" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Appearance Settings</label>
+                <field id="button_text" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Text</label>
+                    <comment>Text to display on the WhatsApp button</comment>
+                    <depends>
+                        <field id="whatsapp/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="button_color" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Color</label>
+                    <comment>Hex color code for the button (e.g.#25D366)</comment>
+                    <depends>
+                        <field id="whatsapp/general/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
