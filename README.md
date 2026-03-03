@@ -44,4 +44,3 @@ Tested on MageOs
    php bin/magento setup:static-content:deploy
    php bin/magento cache:flush
 
- or feature requests, please create an issue on GitHub.
